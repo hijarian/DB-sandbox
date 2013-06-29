@@ -152,5 +152,21 @@ As you provided the `--pidfilepath` commandline argument when launching the Mong
     cat "$MONGODB_DIR/mongodb.pid" | xargs kill ; rm "$MONGODB_DIR/mongob.pid"
     
 Essentially we are feeding the `kill` command with the contents of pidfile and removing it afterwards.
+
+# Bash scripts to automate the sandbox starting and stopping
+
+There is a [GitHub repository with the example scripts](https://github.com/hijarian/DB-sandbox) nicely laid out along with the comments.
+
+There are three scripts:
+
+*   `db_sandbox_properties.sh`: this is the all variable parameters you need to properly setup the sandboxes.
+*   `db_sandbox_start.sh`: this script you run before your test suite. 
+
+    It was updated with the command to copy the tables schema from source MySQL instance to sandbox MySQL instance, so, if you have an accessible up-to-date MySQL instance with the schema for your tests, this script will copy schema to sandbox so you will have a DB ready to accept test cases. 
+
+    NOTE that you will need the sudo rights for your unprivileged user to successfully mount the ramdisk.
+    If you do not have them, you can hack the `mount` command in any way you see sufficient to successfully mount the ramdisk.
+    
+* `db_sandbox_stop.sh`: this script you run when you don't need the sandbox anymore. It'll stop both MySQL and MongoDB and unmount the ramdisk (note that you'll need the sudo rights for this, too).
     
 
