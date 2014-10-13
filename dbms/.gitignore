@@ -1,0 +1,4 @@
+# In this directory should lie large distributives of DBMSes, ignore them
+*
+# But the directory itself should be committed anyway.
+!.gitignore

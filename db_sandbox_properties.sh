@@ -6,7 +6,7 @@
 RAMDISK_DIR=~/disk
 
 # Where the downloaded package with MySQL installation is placed
-MYSQL_PACKAGE=~/Загрузки/mysql-5.6.12-linux-glibc2.5-x86_64.tar.gz
+MYSQL_PACKAGE=./dbms/mysql-5.6.12-linux-glibc2.5-x86_64.tar.gz
 
 # Name of the subdirectory under $RAMDISK_DIR where the mysql datasets will be sandboxed
 MYSQL_DIRNAME=mysql
@@ -15,7 +15,7 @@ MYSQL_DIRNAME=mysql
 MYSQL_PORT_DESIRED=5612
 
 # Directory where the MongoDB binaries lie
-MONGODB_BINDIR=~/systems/mongodb-linux-x86_64-2.4.4/bin
+MONGODB_BINDIR=./dbms/mongodb-linux-x86_64-2.4.4/bin
 
 # Name of the subdirectory under $RAMDISK_DIR where the mongodb datasets will be sandboxed
 MONGODB_DIR="$RAMDISK_DIR"/mongo
@@ -29,8 +29,8 @@ MONGODB_PORT_DESIRED=12345
 DBNAME=pdecor_test
 
 # Connection parameters for source MySQL DB.
-SOURCE_DB_USER=pdecor_dumper
-SOURCE_DB_PASSWORD=
-SOURCE_DB_HOST=pdecor.local
+SOURCE_DB_USER=root
+SOURCE_DB_PASSWORD=mysqlroot
+SOURCE_DB_HOST=localhost
 SOURCE_DB_PORT=
 SOURCE_DB_NAME=pdecor_private
